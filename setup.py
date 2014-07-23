@@ -8,8 +8,8 @@ except ImportError:
 
 
 install_requires = [
-    'Django>=1.2,<1.5',
-    'kazoo>=0.5,<0.9',
+    'Django>=1.2,<1.6',
+    'kazoo>=0.5,<2.0.1',
 ]
 
 tests_require = [
