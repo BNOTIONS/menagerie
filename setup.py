@@ -24,7 +24,7 @@ if 'nosetests' in sys.argv[1:]:
 
 setup(
     name='menagerie',
-    version='0.1.0',
+    version='0.1.1',
     url='http://github.com/disqus/menagerie',
     author='ted kaemming, disqus',
     author_email='ted@disqus.com',
