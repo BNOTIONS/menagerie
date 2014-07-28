@@ -54,12 +54,21 @@ your ZooKeeper cluster/client namespace.
 For example, the following tree of node names and values in ZooKeeper::
 
     /DEBUG: true
-    /INTERNAL_IPS: ['127.0.0.1', '192.168.0.1']
+    /INTERNAL_IPS: ["127.0.0.1", "192.168.0.1"]
+    /SECRET_API_KEY: "zomgsupersecretdonttellanyone"
+    /DICT: {"some_key": "some_value", "boolean": true}
 
 ...would yield the following settings::
 
     settings.DEBUG == True
-    settings.INTERNAL_IPS == ['127.0.0.1', '192.168.0.1']
+    settings.INTERNAL_IPS == ["127.0.0.1", '192.168.0.1"]
+    settings.SECRET_API_KEY == "zomgsupersecretdonttellanyone"
+    settings.DICT == {"some_key": "some_value", "boolean": True}
+
+Settings in zookeeper are deserialized to their python equivalent with
+json.loads() and all values in zookeeper will override their django
+settings counterparts. Values deleted from zookeeper will automatically
+revert to their original settings as definied by your configuration.
 
 The deserializer doesn't do any sort of merging of complex types such as
 mappings or sequences -- either the values read from the ZooKeeper node data
