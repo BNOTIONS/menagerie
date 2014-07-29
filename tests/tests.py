@@ -18,7 +18,7 @@ from menagerie.holder import NotConnectedError, ZooKeeperSettingsHolder
 
 
 class TestCase(Exam, KazooTestCase, unittest2.TestCase):
-    TIMEOUT = 5
+    TIMEOUT = 10
 
     def get_child_node_event(self, path, comparator=operator.contains):
         event = threading.Event()
