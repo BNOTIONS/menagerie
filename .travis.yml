@@ -2,7 +2,6 @@ language: python
 
 notifications:
   email:
-    - ted@disqus.com
     - jonathon@bnotions.com
 
 python:
